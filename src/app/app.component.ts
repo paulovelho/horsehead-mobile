@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FeedService } from './feed.service';
 import { FeedEntry } from './model/feed-entry';
 
-// Add the RxJS Observable operators we need in this app.
-import './rxjs-operators';
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,9 +18,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.refreshFeed();
-    document.addEventListener("deviceready", () => {
-      console.log('Using Cordova plugins with Angular 2. Cordova version: ' + device.cordova)
-    }, false)
   }
 
   refreshFeed() {

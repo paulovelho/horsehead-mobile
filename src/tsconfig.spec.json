@@ -16,9 +16,7 @@
     "types": [
       "jasmine",
       "node",
-      "hammerjs",
-      "codova",
-      "cordova-plugin-device"
+      "hammerjs"
     ]
   },
   "files": [
