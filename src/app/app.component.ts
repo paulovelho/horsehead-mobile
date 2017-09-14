@@ -10,7 +10,6 @@ import { Card } from './model/card';
 })
 export class AppComponent implements OnInit {
 
-  private feedUrl: string = 'https%3A%2F%2Fwww.becompany.ch%2Fen%2Fblog%2Ffeed.xml';
   list: Array<Card> = [];
 
   constructor (
