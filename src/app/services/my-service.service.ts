@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import {Observable} from 'rxjs/Rx';
-import { Feed } from './model/feed';
+import { Observable } from 'rxjs/Rx';
+import { CardList } from 'model/card-list';
 
 @Injectable()
-export class FeedService {
+export class MyService {
 
-  private rssToJsonServiceBaseUrl: string = 'https://rss2json.com/api.json?rss_url=';
+  private baseUrl: string = 'www.platypusweb.com.br';
 
   constructor(
     private http: Http
   ) { }
 
-  getFeedContent(url: string): Observable<Feed> {
-    return this.http.get(this.rssToJsonServiceBaseUrl + url)
+  getContent(url: string): Observable<CardList> {
+    return this.http.get(this.baseUrl + url)
             .map(this.extractFeeds)
             .catch(this.handleError);
   }
 
-  private extractFeeds(res: Response): Feed {
+  private extractFeeds(res: Response): CardList {
     let feed = res.json();
     return feed || { };
   }

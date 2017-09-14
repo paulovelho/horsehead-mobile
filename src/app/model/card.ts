@@ -1,7 +1,7 @@
-export interface FeedInfo {
+export interface Card {
   title: string,
-  link: string,
   author: string,
   description: string,
+  published: Date,
   image: string
 }

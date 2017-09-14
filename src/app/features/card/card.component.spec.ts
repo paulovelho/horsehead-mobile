@@ -2,15 +2,15 @@
 
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { By }              from '@angular/platform-browser';
-import { FeedCardComponent } from './feed-card.component';
+import { FeedCardComponent } from './card.component';
 import { DebugElement }    from '@angular/core';
 
 import { MdCardModule } from '@angular/material';
 
-import { StripHtmlTagsPipe } from '../pipe/strip-html-tags.pipe';
+import { StripHtmlTagsPipe } from '../../pipe/strip-html-tags.pipe';
 
 let comp:      FeedCardComponent;
-let fixture:   ComponentFixture<FeedCardComponent>;
+let fixture:   ComponentFixture<CardComponent>;
 let el:        DebugElement;
 
 describe('Component: FeedCard', () => {
@@ -30,12 +30,12 @@ describe('Component: FeedCard', () => {
   });
 
   it('should create an instance', () => {
-    let component = new FeedCardComponent();
+    let component = new CardComponent();
     expect(component).toBeTruthy();
   });
 
-  it('should contains the feed values passed by argument', () => {
-    comp.feed = {
+  it('should contains the card values passed by argument', () => {
+    comp.card = {
       title: 'TEST title',
       author: 'TEST author',
       pubDate: new Date(),

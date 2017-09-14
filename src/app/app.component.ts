@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FeedService } from './feed.service';
-import { FeedEntry } from './model/feed-entry';
+import { MyService } from './services/my-service.service';
+import { CardList } from './model/card-list';
+import { Card } from './model/card';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,10 @@ import { FeedEntry } from './model/feed-entry';
 export class AppComponent implements OnInit {
 
   private feedUrl: string = 'https%3A%2F%2Fwww.becompany.ch%2Fen%2Fblog%2Ffeed.xml';
-  feeds: Array<FeedEntry> = [];
+  list: Array<Card> = [];
 
   constructor (
-    private feedService: FeedService
+    private myService: MyService
   ) {}
 
   ngOnInit() {
@@ -21,11 +22,11 @@ export class AppComponent implements OnInit {
   }
 
   refreshFeed() {
-    this.feeds.length = 0;
+    this.list.length = 0;
     // Adds 1s of delay to provide user's feedback.
-    this.feedService.getFeedContent(this.feedUrl).delay(1000)
+    this.myService.getContent("").delay(1000)
         .subscribe(
-            feed => this.feeds = feed.items,
+            feed => this.list = feed.items,
             error => console.log(error));
   }
 

@@ -1,0 +1,5 @@
+<md-card class="card-entry" (click)="clickCard()">
+  <md-card-title>{{card.title}}</md-card-title>
+  <md-card-subtitle>{{card.author}} - {{card.pubDate | date:'dd-MM-yyyy'}}</md-card-subtitle>
+  <md-card-content>{{card.description | stripHtmlTags}}</md-card-content>
+</md-card>

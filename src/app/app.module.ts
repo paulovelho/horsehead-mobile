@@ -7,15 +7,15 @@ import { HttpModule } from '@angular/http';
 import { MdCardModule, MdToolbarModule, MdButtonModule, MdIconModule, MdIconRegistry } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { FeedCardComponent } from './feed-card/feed-card.component';
-import { FeedService } from './feed.service';
-import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
-import { SpinnerComponent } from './spinner/spinner.component';
+import { CardComponent } from './features/card/card.component';
+import { MyService } from './services/my-service.service';
+import { StripHtmlTagsPipe } from './pipes/strip-html-tags.pipe';
+import { SpinnerComponent } from './features/layout/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FeedCardComponent,
+    CardComponent,
     StripHtmlTagsPipe,
     SpinnerComponent
   ],
@@ -28,7 +28,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     MdButtonModule,
     MdIconModule
   ],
-  providers: [FeedService, MdIconRegistry],
+  providers: [MyService, MdIconRegistry],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
